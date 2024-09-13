@@ -1,5 +1,6 @@
 
 using APIQueroOficina.Models;
+using APIQueroOficina.Services;
 using System;
 
 namespace APIQueroOficina
@@ -13,6 +14,7 @@ namespace APIQueroOficina
             // Add services to the container.
             builder.Services.Configure<WorkShopDatabaseSettings>(
                 builder.Configuration.GetSection("WorkShopDatabase"));
+            builder.Services.AddSingleton<WorkShopService>();
 
             builder.Services.AddControllers();
 
